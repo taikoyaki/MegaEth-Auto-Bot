@@ -130,4 +130,4 @@ To make custom action chains you need to change the ```ACTIONS``` array by addin
 
 ```Send GM``` = *Send gm via onchaingm (once every 24 hours)*
 
-Last updated: Thu Apr 24 18:14:19 UTC 2025
+Last updated: Fri Apr 25 00:53:51 UTC 2025
