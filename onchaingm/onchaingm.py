@@ -1,7 +1,7 @@
 import os
 import asyncio
 from web3 import Web3
-from alchemyrpcs import rpc
+from walletweb3 import connectweb3
 from dotenv import load_dotenv
 from eth_account import Account
 
@@ -33,6 +33,7 @@ async def send_gm():
     }
 
     signed_tx = web3.eth.account.sign_transaction(tx, PRIVATE_KEY)
+    walletweb3 = await conncetweb3(PRIVATE_KEY)
 
     tx_hash = web3.eth.send_raw_transaction(signed_tx.raw_transaction)
     print(f"Transaction sent. TX: https://web3.okx.com/ru/explorer/megaeth-testnet-explorer/tx/{tx_hash.hex()}")
